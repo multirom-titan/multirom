@@ -18,7 +18,8 @@ It also needs libbootimg:
     
 MuiltiRom TWRP:
 
-    git clone https://github.com/Tasssadar/Team-Win-Recovery-Project.git bootable/recovery-multirom
+    rm -rf bootable/recovery
+    git clone https://github.com/Tasssadar/Team-Win-Recovery-Project.git bootable/recovery
     
 Device Specific MultiRom Config
 
@@ -34,4 +35,4 @@ To Build MultiRom Recovery, use `recoryimage` target:
 
     . build/envsetup.sh
     breakfast titan
-    make -j5 recoveryimage RECOVERY_VARIANT=multirom
+    make -j5 recoveryimage
