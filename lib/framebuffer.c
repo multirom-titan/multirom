@@ -368,7 +368,7 @@ void fb_rotate_180deg(px_type *dst, px_type *src)
     {
         src -= padding;
         for(x = 0; x < fb_width; ++x)
-            *dst++ = *src--;
+            *dst++ = *(--src);
         dst += padding;
     }
 }
@@ -1089,7 +1089,7 @@ void fb_pop_context(void)
 }
 
 #define SLEEP_CONST 16
-void *fb_draw_thread_work(void *cookie)
+void *fb_draw_thread_work(UNUSED void *cookie)
 {
     struct timespec last, curr;
     uint32_t diff = 0, prevSleepTime = 0;
